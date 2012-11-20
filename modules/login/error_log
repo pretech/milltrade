@@ -1,0 +1,6 @@
+[16-May-2012 02:19:26] PHP Fatal error:  Call to undefined function  logged_in() in /home/precurso/public_html/~projects/milltrade/modules/login/login.php on line 27
+[16-May-2012 04:32:04] PHP Fatal error:  Call to undefined function  logged_in() in /home/precurso/public_html/~projects/milltrade/modules/login/login.php on line 27
+[16-May-2012 04:33:53] PHP Fatal error:  Call to undefined function  logged_in() in /home/precurso/public_html/~projects/milltrade/modules/login/login.php on line 27
+[22-May-2012 23:36:21] PHP Fatal error:  Call to undefined function  logged_in() in /home/precurso/public_html/~projects/milltrade/modules/login/login.php on line 27
+[22-May-2012 23:40:40] PHP Fatal error:  Call to undefined function  logged_in() in /home/precurso/public_html/~projects/milltrade/modules/login/login.php on line 27
+[22-May-2012 23:42:36] PHP Fatal error:  Call to undefined function  logged_in() in /home/precurso/public_html/~projects/milltrade/modules/login/login.php on line 27

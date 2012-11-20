@@ -1,0 +1,11 @@
+[22-May-2012 23:35:49] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/products/products.php on line 2
+[22-May-2012 23:36:45] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/products/products.php on line 2
+[22-May-2012 23:41:03] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/products/products.php on line 2
+[22-May-2012 23:43:57] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/products/products.php on line 2
+[23-May-2012 00:21:49] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/products/products.php on line 2
+[23-May-2012 00:35:54] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/products/products.php on line 2
+[23-May-2012 00:46:47] PHP Parse error:  syntax error, unexpected '.' in /home/precurso/public_html/~projects/milltrade/modules/products/products.php on line 2
+[23-May-2012 00:51:30] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/products/products.php on line 2
+[23-May-2012 01:04:08] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/products/products.php on line 2
+[23-May-2012 01:12:49] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/products/products.php on line 2
+[03-Jun-2012 05:51:40] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/products/products.php on line 2

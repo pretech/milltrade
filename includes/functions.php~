@@ -1,0 +1,161 @@
+<?php
+function heading($title, $description, $keywords)
+{
+    $base=BASE;
+    $flash_message=get_flash_message();
+    if($flash_message!=0)
+    {
+        if($flash_message['type']==1) $display_flash="<font color='green'><strong>".$flash_message['message']."</strong></font>";
+        elseif($flash_message['type']==0) $display_flash="<font color='red'><strong>".$flash_message['message']."</strong></font>";
+    }
+    $menus=top_menus();
+
+    echo <<<html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>এস. এস অটো রাইস মিল</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 0.20" />
+
+	<link rel="stylesheet" type="text/css" href="$base/files/pro_dropdown_2/pro_dropdown_2.css" />
+    <script src="$base/files/pro_dropdown_2/stuHover.js" type="text/javascript"></script>
+
+
+</head>
+
+<body>
+
+
+</script>
+
+	<div class="logo"><img src="$base/files/images/logo.jpg"/></div>
+
+	<div class="navigation1">
+
+		   <ul id="main_nav">
+				<li class="top"><a  href="employee_info_form.php" class="top_link"><span>Home</span></a></li>
+				<li class="top"><a  href="employee_info_form.php" id="products" class="top_link"><span class="down">Money</span></a>
+				<li class="top"><a  href="employee_info_form.php" id="services" class="top_link"><span class="down">People</span></a>
+				<li class="top"><a href="#" id="contacts" class="top_link"><span class="down">Products</span></a>
+				<li class="top"><a  href="#" id="shop" class="top_link"><span class="down">Expenditure</span></a>
+				<li class="top"><a  href="#" id="privacy" class="top_link"><span>Administration</span></a></li>
+                                <li class="top"><a  href="#" id="privacy" class="top_link"><span>Logout</span></a></li>
+			</ul>
+
+     </div>    <!----------------End: Navigation----------------->
+
+     <div style="clear: both"></div>
+
+     <div>
+
+         স্বাগতম <b><i></i></b>
+     </div>
+     <div>
+         আপনার অবস্থান:
+
+     </div>
+     <hr />
+     <div style="min-height: 400px;">
+html;
+}
+
+function footing()
+{
+    $base=BASE;
+    echo <<<html
+								</div>
+	<div style="clear: both"></div>
+	<hr/>
+	<div class="footer">
+				<div style="float:left; margin-top: 15px; padding: 5px">Copyright &copy; এস. এস অটো রাইস মিল</div>
+				<div style="float:right; margin-top: 15px; padding: 5px">Developed By: <a href="http://www.precursortechnology.com" style="text-decoration: none;" target="_blank">Precursor Technology</a></div>
+
+			</div>
+
+	</body>
+	</html>
+html;
+}
+
+function top_menus()
+{
+    if(logged_in())
+    {
+        return "Hi, <strong><a href='".BASE."/profile'>".current_username()."</a></strong> | <a href='".BASE."/projects'>Projects</a> | <a href='".BASE."/videos/all'>Videos</a>| <a href='".BASE."/resources'>Resources</a> | <a href='".BASE."/login/?logout=true'>বাহির</a>";
+    }
+    else return "<a href='".BASE."'>Home</a> | <a href='".BASE."/login'>প্রবেশ করুন</a>";
+}
+
+function set_flash_message($message, $flag)
+{
+    $_SESSION['flash']['message']=$message;
+    $_SESSION['flash']['type']=$flag;
+}
+
+function get_flash_message()
+{
+    if(isset($_SESSION['flash']))
+    {
+        $message=array('message'=>$_SESSION['flash']['message'], 'type'=>$_SESSION['flash']['type']);
+        unset($_SESSION['flash']);
+        return $message;
+    }
+    else return 0;
+}
+
+function logged_in()
+{
+    if(isset($_SESSION['auth_user']))
+    {
+        return 1;
+    }
+    else return 0;
+}
+
+//following function returns the id of current user
+function current_user()
+{
+    if(isset($_SESSION['auth_user']['id'])) return $_SESSION['auth_user']['id'];
+    else return false;
+}
+
+//following function returns the id of current user's usernam
+function current_username()
+{
+    if(isset($_SESSION['auth_user']['username'])) return $_SESSION['auth_user']['username'];
+    else return false;
+}
+
+function current_user_fullname()
+{
+    if(isset($_SESSION['auth_user']['name'])) return $_SESSION['auth_user']['name'];
+    else return false;
+}
+
+function current_user_type()
+{
+    if(isset($_SESSION['auth_user']['type'])) return $_SESSION['auth_user']['type'];
+    else return false;
+}
+
+//following function returns the id of current user
+function current_user_info($parameter)
+{
+    if(isset($_SESSION['auth_user'][$parameter])) return $_SESSION['auth_user'][$parameter];
+    else return false;
+}
+
+//following function creates a pagination
+function paginate($total, $current_page, $total_every_page, $url)
+{
+
+    $total_pages=$total/$total_every_page;
+    if($total_page>round($total_page)) $total_pages=round($total_pages)+1;
+
+    if($current_page>1) echo "<a href='".$url."/page/".($current_page-1)."'><input type='submit' value='<<<পূর্বে'></a>";
+    if($current_page<($total_pages)) echo "<a href='".$url."/page/".($current_page+1)."'><input type='submit' value='Next>>>'></a>";
+}
+?>

@@ -1,0 +1,125 @@
+<?php
+if(current_user_info('type')=="admin")
+{
+    if(isset($_REQUEST['process']))
+    {
+        if($_REQUEST['process']=="add")
+        {
+            //write codes of adding a new product here(action script of the form)
+            $sql="insert into product_list(product_name, business_id,type,price_per_unit) values ('$_POST[product_name]','$_POST[business_id]','$_POST[type]','$_POST[price_per_unit]')";
+
+            if(!mysql_query($sql,$link))
+            {
+                die('Error:'.mysql_error());
+            }
+            echo 'one product added';
+            die();
+        }
+        elseif($_REQUEST['process']=="update")
+        {
+            //write codes of updating an existing product(action script of the edit form)
+        }
+    }
+
+    heading("", "", "");
+    if($break[$start+1]=="add")
+    {
+        $base=BASE;
+        echo <<<EOT
+        <form action="$base/products/?process=add" method="POST">
+
+    <h3>পণ্য সংযুক্ত করুন</h3>
+
+    <table>
+
+        <tr>
+            <td>পণ্যের নাম</td>
+            <td>:</td>
+            <td><input type="text" name="product_name"></td>
+
+        </tr>
+
+        <tr>
+            <td>ব্যবসা আইডি</td>
+            <td>:</td>
+            <td>
+EOT;
+        $result = mysql_query("SELECT * FROM businesses") or trigger_error('MySQL error: ' . mysql_error());
+
+                 echo '<select name ="business_id">';
+
+                 echo '<option value="">select</option>';
+
+                while($row = mysql_fetch_array($result))
+                {
+                     echo '<option value="'.$row['id'].'">'.$row['description'].'</option>';
+                }
+
+                echo '</select>';
+                echo <<<EOT
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>ধরন</td>
+            <td>:</td>
+            <td>
+                 <select name="type">
+
+                     <option value="">select</option>
+                     <option value="raw">কাঁচা মাল</option>
+                     <option value="final">final</option>
+
+                 </select>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>একক প্রতি মূল্য</td>
+            <td>:</td>
+            <td><input type="text" name="price_per_unit"></td>
+
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td><input type="Submit" value="দাখিল করুন"></td>
+
+
+        </tr>
+    </table>
+</form>
+EOT;
+    }
+    elseif($break[$start+1]=="edit")
+    {
+        if(isset($break[$start+2])) $id=$break[$start+2];               
+        //echo "write sql to find information of product with id='$id' and make a form like add form with it's value from database to allow user to edit and update. form action will be domain/products/?process=update&id=$id";
+    }
+    elseif($break[$start+1]=="business")
+    {
+        if(isset($break[$start+2]))
+        {
+            $id=$break[$start+2];
+            echo "show list of all products of the business with id='$id'";
+            //write code here.... some product names with link will be displayed here.
+        }
+        else
+        {
+            echo "show list of all businesses";
+            //write codes to display all businesses (mills and trading) with link <a href='".BASE."/products/business/".$row['id']."'>Business name</a>
+        }
+    }
+    else
+    {
+        echo "<a href='".BASE."/products/add'>Add New Product</a><br>";
+        echo "show list of all products lists";
+    }
+    footing();
+}
+else header("location:".BASE."/home");
+?>

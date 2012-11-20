@@ -1,0 +1,98 @@
+.clear
+{
+    clear: both;	
+} 
+
+.anchor
+{
+	padding: 10px 2px;
+	display: block;
+	background:#dfdfdf;
+	border-radius: 10px;
+	text-decoration: none;
+	text-shadow: 0.4em 0.4em 0.5em white;
+	color: #333;
+   	text-align: center;
+ 	box-shadow: 5px 5px 2px #888;
+ 	width: 150px;
+}
+
+.anchor:hover
+{
+
+background:#efefef;
+border-radius: 10px;
+text-decoration: none;
+color: #111;
+box-shadow:8px 8px 4px #888;
+text-shadow: 0.1em 0.1em 0.2em #aaa;
+}
+
+.anchor:active
+{
+	background:#dfdfdf;
+	box-shadow: none;
+}
+
+.ul-box-inline
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;	
+}
+
+.ul-box-inline li
+{
+    display: inline;	
+}
+
+.ul-box-block
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;	
+}
+
+.ul-box-block li
+{
+    display: block;	
+}
+
+.left
+{
+    float: left;	
+}
+
+.right
+{
+    float: right;	
+}
+
+.bdr
+{
+	border: 2px solid #dfdfdf;
+}
+
+.mgn-right-20
+{
+    margin-right: 20px;	
+}
+
+.mgn-bottom-20
+{
+    margin-bottom: 20px;	
+}
+
+
+.box-container
+{
+    
+    text-align: center;	
+}
+
+.box-title
+{
+    background-color: #dfdfdf;
+    text-align: center;
+    font-weight: bold;	
+}

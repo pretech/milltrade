@@ -1,0 +1,42 @@
+<?php
+
+$id=$_REQUEST['id'];
+
+$sql=mysql_query("SELECT * from employee_info where id='$id'");
+ echo "<table border='1'>
+              <tr>
+	              <th>নিয়োগের সময়</th>
+	              <th>নাম</th>
+	              <th>পিতা/স্বামীর নাম</th>
+	              <th>মাতার নাম</th>
+	              <th>বর্তমান ঠিকানা</th>
+	              <th>স্থায়ী ঠিকানা</th>
+	              <th>শিক্ষাগত যোগ্যতা</th>
+	              <th>জাতীয় পরিচয় পত্র নং</th>
+	              <th>মুঠোফোন নং</th>
+	              <th>পদবী</th>
+	              <th>বেতন</th>
+	              <th>সম্পাদনা</th>
+	              <th>বাতিল</th>
+              </tr>";
+          
+            while($row = mysql_fetch_array($sql))
+            {
+
+        echo "<tr>";
+           echo "<td>".$row['name']. "</td>";
+           echo "<td>".$row['designation']."</td>";
+           echo "<td>".$row['fhname']. "</td>";
+           echo "<td>".$row['mother_name']."</td>";
+           echo "<td>".$row['present_address']. "</td>";
+           echo "<td>".$row['permanent_address']."</td>";
+           echo "<td>".$row['educational_qualification']. "</td>";
+           echo "<td>".$row['date_of_birth']."</td>";
+           echo "<td>".$row['cell_no']."</td>";
+           echo "<td>".$row['designation']. "</td>";
+           echo "<td>".$row['salary']."</td>";
+       echo "</tr>";
+             }
+         echo "</table>";  
+             
+         ?>

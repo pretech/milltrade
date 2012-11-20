@@ -1,0 +1,2 @@
+[23-May-2012 00:42:05] PHP Fatal error:  Call to undefined function  current_user_type() in /home/precurso/public_html/~projects/milltrade/modules/employee/employee.php on line 9
+[23-May-2012 01:04:06] PHP Fatal error:  Call to undefined function  current_user_type() in /home/precurso/public_html/~projects/milltrade/modules/employee/employee.php on line 9

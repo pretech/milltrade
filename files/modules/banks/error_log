@@ -1,0 +1,2 @@
+[23-May-2012 05:34:12] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/banks/banks.php on line 2
+[23-May-2012 05:34:48] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/banks/banks.php on line 2

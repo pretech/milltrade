@@ -1,0 +1,7 @@
+[16-Jun-2012 00:28:06] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/reports/reports.php on line 9
+[16-Jun-2012 23:21:16] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/~projects/milltrade/modules/reports/reports.php on line 9
+[19-Nov-2012 00:45:30] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/milltrade.com/modules/reports/reports.php on line 9
+[19-Nov-2012 00:45:52] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/milltrade.com/modules/reports/reports.php on line 9
+[19-Nov-2012 00:45:57] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/milltrade.com/modules/reports/reports.php on line 9
+[19-Nov-2012 00:47:12] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/milltrade.com/modules/reports/reports.php on line 9
+[19-Nov-2012 00:47:34] PHP Fatal error:  Call to undefined function  current_user_info() in /home/precurso/public_html/milltrade.com/modules/reports/reports.php on line 9
